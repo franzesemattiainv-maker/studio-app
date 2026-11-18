@@ -1,32 +1,24 @@
-# React + TypeScript + Vite
+# Studio · demo
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Il medico di famiglia, senza la fila. Versione dimostrativa da far provare ai medici: **tutti i dati sono inventati** e restano solo nel browser di chi la usa.
 
-Currently, two official plugins are available:
+## Cosa fa
+- **Paziente**: chiede ricette ripetute (dalla terapia abituale), visite, certificati, domande. Vede lo stato e il codice ricetta.
+- **Medico**: richieste divise in 4 sezioni, approvazione in blocco, rifiuto con motivo, conferma orario visita, risposte rapide.
+- Installabile sul telefono (PWA): dal browser, "Aggiungi a schermata Home".
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Provarla
+Apri l'app, entra come medico in una scheda e come paziente in un'altra: le richieste si aggiornano in tempo reale. "Ripristina demo" (area medico) riporta ai dati iniziali.
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+## Sviluppo
+```bash
+npm install
+npm run dev
 ```
+Ogni push su `main` pubblica la demo su GitHub Pages.
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Prossimi passi verso la versione reale
+- Backend con server in UE (es. Supabase EU), autenticazione vera, ruoli e permessi.
+- Conformità GDPR per dati sanitari (DPIA, registro trattamenti, consenso).
+- Notifiche push / email al paziente.
+- Pubblicazione sugli store (Capacitor) dopo il pilota.
