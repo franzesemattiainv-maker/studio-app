@@ -126,8 +126,8 @@ export function DoctorApp() {
           <span>Studio</span>
           <span className="cmd-sep" />
           <span className="cmd-doc">
-            <b>Dott.ssa Laura Conti</b>
-            <small>Medicina generale</small>
+            <span className="script">Laura Conti</span>
+            <small>Dott.ssa · Medicina generale</small>
           </span>
         </div>
         <div className="cmd-right">
@@ -153,6 +153,7 @@ export function DoctorApp() {
             <br />
             <span className="grad">in coda oggi.</span>
           </h1>
+          <span className="rule left" />
         </div>
 
         <div className="bento dr-bento">
@@ -425,7 +426,7 @@ function RejectModal({ count, onCancel, onConfirm }: { count: number; onCancel: 
   const [text, setText] = useState(REASONS[0])
   return (
     <div className="scrim" onClick={onCancel}>
-      <div className="modal glass" onClick={(e) => e.stopPropagation()}>
+      <div className="modal glass framed" onClick={(e) => e.stopPropagation()}>
         <span className="tile-ic danger"><Icon name="x" /></span>
         <h2>Non approvare {count > 1 ? <><span className="num">{count}</span> richieste</> : 'la richiesta'}</h2>
         <p className="muted">Il paziente vedrà questo messaggio.</p>

@@ -29,7 +29,7 @@ export function Icon({ name, size = 20, className }: { name: IconName | Section;
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      strokeWidth={1.7}
+      strokeWidth={1.45}
       strokeLinecap="round"
       strokeLinejoin="round"
       className={className}
@@ -44,8 +44,8 @@ export function Icon({ name, size = 20, className }: { name: IconName | Section;
 
 export function Mark({ size = 30 }: { size?: number }) {
   return (
-    <span className="mark" style={{ width: size, height: size }}>
-      <Icon name="plus" size={size * 0.55} />
+    <span className="mark" style={{ width: size, height: size, fontSize: size * 0.68 }} aria-hidden="true">
+      <span>S</span>
     </span>
   )
 }

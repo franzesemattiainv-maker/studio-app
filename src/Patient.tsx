@@ -44,7 +44,7 @@ export function PatientApp({ patientId }: { patientId: string }) {
           </div>
         ) : (
           <button className="back" onClick={() => setView('home')}>
-            <Icon name="back" size={18} /> Indietro
+            <Icon name="back" size={16} /> Indietro
           </button>
         )}
         <div className="pt-user">
@@ -99,13 +99,14 @@ function Home({ patient, onOpen, unseen, pending }: { patient: Patient; onOpen: 
 
   return (
     <div className="bento pt-bento">
-      <section className="b-hero tile glass">
+      <section className="b-hero tile glass framed">
         <span className="eyebrow num">{today}</span>
         <h1>
           Buongiorno,
           <br />
           <span className="grad">{patient.name.split(' ')[0]}.</span>
         </h1>
+        <span className="rule left" />
         {unseen > 0 ? (
           <button className="pulse-pill" onClick={() => onOpen('richieste')}>
             <i className="live" />
