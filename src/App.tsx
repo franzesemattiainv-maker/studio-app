@@ -12,9 +12,10 @@ export default function App() {
   return (
     <>
       <div className="ambient" aria-hidden="true">
-        <span className="halo" />
-        <span className="halo low" />
-        <span className="vignette" />
+        <span className="orb o1" />
+        <span className="orb o2" />
+        <span className="orb o3" />
+        <span className="gridlines" />
         <span className="grain" />
       </div>
       <div key={key} className="stage-enter">

@@ -1,17 +1,17 @@
-import { Icon } from './Icon'
+import { Icon, Mark } from './Icon'
 import { PATIENTS, setSession } from './store'
 
 export function Login() {
   return (
     <div className="login">
       <section className="login-hero">
-        <div className="lockup">
-          <span className="script">Studio</span>
-          <span className="caps">Medicina generale</span>
+        <div className="brand">
+          <Mark />
+          <span>Studio</span>
         </div>
         <div className="hero-copy">
           <span className="eyebrow">
-            <i className="live" /> Ambiente dimostrativo
+            <i className="live" /> Medicina generale · ambiente demo
           </span>
           <h1>
             Dal medico,
@@ -22,7 +22,6 @@ export function Login() {
             Ricette, visite, certificati e domande arrivano allo studio già ordinati. Il medico decide, in blocco, in pochi secondi.
           </p>
         </div>
-        <span className="rule left" style={{ maxWidth: 420 }} />
         <dl className="hero-stats">
           <div>
             <dt>Sezioni</dt>
@@ -39,13 +38,8 @@ export function Login() {
         </dl>
       </section>
 
-      <section className="login-panel glass framed">
-        <div className="panel-title">
-          <span className="eyebrow">Benvenuti</span>
-          <h2>Accedi allo studio</h2>
-          <span className="rule" />
-        </div>
-        <div className="panel-label">Il medico</div>
+      <section className="login-panel glass">
+        <div className="panel-label">Accesso</div>
         <button className="role-doctor" onClick={() => setSession({ role: 'medico' })}>
           <span className="rd-glow" />
           <span className="rd-ic">
@@ -53,12 +47,12 @@ export function Login() {
           </span>
           <span className="rd-txt">
             <b>Area medico</b>
-            <span className="script">Laura Conti</span>
+            <small>Dott.ssa Laura Conti</small>
           </span>
           <Icon name="arrow" size={18} className="rd-arrow" />
         </button>
 
-        <div className="panel-label">I pazienti</div>
+        <div className="panel-label">Oppure entra come paziente</div>
         <div className="plist">
           {PATIENTS.map((p, i) => (
             <button
@@ -72,7 +66,7 @@ export function Login() {
                 <b>{p.name}</b>
                 <small className="num">{p.birth}</small>
               </span>
-              <span className="prow-meta num">{p.therapy.length} {p.therapy.length === 1 ? 'farmaco' : 'farmaci'}</span>
+              <span className="prow-meta num">{p.therapy.length} farmaci</span>
               <Icon name="arrow" size={16} className="prow-arrow" />
             </button>
           ))}
